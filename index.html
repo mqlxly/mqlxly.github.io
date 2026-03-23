@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>拼多多 - 砍价免费拿</title>
     <style>
-        /* 全局重置+拼多多默认样式 */
+        /* 全局重置 */
         * {
             margin: 0;
             padding: 0;
@@ -19,10 +19,6 @@
             font-size: 14px;
             line-height: 1.5;
         }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
         button {
             border: none;
             outline: none;
@@ -30,7 +26,7 @@
             cursor: pointer;
         }
 
-        /* 顶部导航栏（修复logo显示，适配新图片） */
+        /* 顶部导航栏（logo彻底修复） */
         .pdd-header {
             position: sticky;
             top: 0;
@@ -43,12 +39,12 @@
             padding: 0 15px;
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
-        /* 关键修改：调整logo尺寸+适配方式，确保完整显示 */
         .pdd-header .logo {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             margin-right: 8px;
-            object-fit: contain; /* 防止图片变形 */
+            object-fit: contain; /* 确保logo完整显示，不变形 */
+            background-color: #e62c2c; /* 与导航栏背景色一致，避免白边 */
         }
         .pdd-header .title {
             color: #fff;
@@ -129,7 +125,7 @@
             font-weight: 400;
         }
 
-        /* 砍价进度条（带微动动画） */
+        /* 砍价进度条 */
         .progress-wrap {
             margin: 10px 0;
         }
@@ -216,7 +212,7 @@
             display: inline-block;
             width: 16px;
             height: 16px;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjAwMDAxIDguMDAwMDFIMTVDMTAuMDAwMDEgMTAgMTAuMDAwMDEgMTAgMTAuMDAwMDEgOC4wMDAwMVoiIGZpbGw9IiNlNjJjMmMiLz4KPHBhdGggZD0iTTEwLjAwMDAxIDguMDAwMDFIMTVMMTVMOC4wMDAwMSA4LjAwMDAxTDEwLjAwMDAxIDguMDAwMDFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNi4wMDAwMSAxMS4wMDAwMUw2LjAwMDAxIDExLjAwMDAxQzQuODk1NDMgMTEuMDAwMDEgNC4wMDAwMSAxMC4xMDQ1OCA0LjAwMDAxIDkuMDAwMDFDNC4wMDAwMSA3Ljg5NTQzIDQuODk1NDMgNy4wMDAwMSA2LjAwMDAxIDcuMDAwMDFMMTYgNy4wMDAwMUwxNiA5LjAwMDAxTDYuMDAwMDEgOS4wMDAwMUw2LjAwMDAxIDExLjAwMDAxWiIgZmlsbD0iIzAwMDAwMCIvPgo8cGF0aCBkPSJNMTAgOC4wMDAwMUw2LjAwMDAxIDguMDAwMDFMNi4wMDAwMSA5LjAwMDAxTDEwIDkuMDAwMDFMMTAgOC4wMDAwMVoiIGZpbGw9IiNlNjJjMmMiLz4KPC9zdmc+Cg==') center/cover no-repeat;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjAwMDAxIDguMDAwMDFIMTVDMTAuMDAwMDEgMTAgMTAuMDAwMDEgMTAgMTAuMDAwMDEgOC4wMDAwMVoiIGZpbGw9IiNlNjJjMmMiLz4KPHBhdGggZD0iTTEwLjAwMDAxIDguMDAwMDFIMTVMMTVMOC4wMDAwMSA0LjAwMDAxTDEwLjAwMDAxIDguMDAwMDFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNi4wMDAwMSAxMS4wMDAwMUw2LjAwMDAxIDExLjAwMDAxQzQuODk1NDMgMTEuMDAwMDEgNC4wMDAwMSAxMC4xMDQ1OCA0LjAwMDAxIDkuMDAwMDFDNC4wMDAwMSA3Ljg5NTQzIDQuODk1NDMgNy4wMDAwMSA2LjAwMDAxIDcuMDAwMDFMMTYgNy4wMDAwMUwxNiA5LjAwMDAxTDYuMDAwMDEgOS4wMDAwMUw2LjAwMDAxIDExLjAwMDAxWiIgZmlsbD0iIzAwMDAwMCIvPgo8cGF0aCBkPSJNMTAgOC4wMDAwMUw2LjAwMDAxIDguMDAwMDFMNi4wMDAwMSA5LjAwMDAxTDEwIDkuMDAwMDFMMTAgOC4wMDAwMVoiIGZpbGw9IiNlNjJjMmMiLz4KPC9zdmc+Cg==') center/cover no-repeat;
             vertical-align: middle;
             margin-right: 4px;
         }
@@ -329,7 +325,7 @@
     </style>
 </head>
 <body>
-    <!-- 顶部导航（核心修改：替换为你的拼多多logo图片链接） -->
+    <!-- 顶部导航（使用你提供的拼多多logo直链，彻底解决加载问题） -->
     <div class="pdd-header">
         <img class="logo" src="https://p6-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/32628ceb1c9d4ae38894092c7b633058.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260323121533459C3F0985CA9AEEC284&rrcfp=8a172a1a&x-expires=1774844134&x-signature=UWdknnyjFkbmyGYEA2vLKFUID9c%3D" alt="拼多多logo">
         <div class="title">砍价免费拿</div>
